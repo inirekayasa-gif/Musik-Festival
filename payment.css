@@ -113,7 +113,7 @@ body.payment-body {
     margin-bottom: 60px;
 }
 
-.h2 {
+h2 {
     font-size: 1.8rem;
     text-align: center;
     color: #ff9e00; /* Warna judul kuning-oranye khas tombol utama */
@@ -464,7 +464,13 @@ body.payment-body {
    ========================================================================= */
 @media screen and (max-width: 768px) {
 
-    .navbar {
+    html, body.payment-body {
+        width: 100%;
+        overflow-x:hidden;
+        padding-top: 100px; /* Mengurangi jarak atas */
+    }
+
+    .payment-header {
         padding: 15px 5%;
     }
 
