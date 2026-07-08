@@ -76,3 +76,23 @@ function pesanTiket(namaTier) {
     // Trik ini membuat halaman payment bisa membaca tiket apa yang baru saja diklik oleh user
     window.location.href = `payment.html?ticket=${namaTier}`;
 }
+
+// =========================================================================
+// LOGIKA HAMBURGER MENU UNTUK RESPONSIVITAS LAYAR HP
+// =========================================================================
+const mobileMenu = document.getElementById('mobileMenu');
+const navLinks = document.getElementById('navLinks');
+
+// 1. Fungsi untuk membuka dan menutup menu saat tombol hamburger diklik
+mobileMenu.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    navLinks.classList.toggle('active');
+});
+
+// 2. Fungsi tambahan: Menutup menu secara otomatis setelah user memilih salah satu menu
+document.querySelectorAll('.nav-links li a').forEach(link => {
+    link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        navLinks.classList.remove('active');
+    });
+});
