@@ -1,0 +1,349 @@
+/* RESET & GLOBAL STYLES */
+* {
+    margin: 0;                      /* Menghapus margin bawaan dari semua elemen browser */
+    padding: 0;                      /* Menghapus padding bawaan dari semua elemen browser */
+    box-sizing: border-box;          /* Memastikan padding tidak merusak ukuran elemen */
+}
+
+body {
+    font-family: 'Poppins', sans-serif; /* Menerapkan font Poppins pada seluruh halaman web */
+    background-color: #0d0d13;      /* Warna latar belakang gelap gulita */
+    color: #ffffff;                 /* Mengatur warna teks default menjadi putih */
+    scroll-behavior: smooth;        /* Efek transisi halus saat klik menu navigasi */
+}
+
+h2 {
+    text-align: center;             /* Mengatur posisi teks judul agar berada di tengah */
+    font-size: 2.5rem;              /* Mengatur ukuran huruf untuk judul utama section */
+    margin-bottom: 30px;            /* Memberikan jarak luar sebesar 30 piksel di bawah judul */
+    color: #ff9e00;                 /* Warna judul section oranye menyala */
+    text-shadow: 0 0 10px rgba(255, 158, 0, 0.5); /* Memberikan efek pendaran cahaya oranye pada teks judul */
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;                  /* Mengaktifkan flexbox untuk mengatur tata letak menu navigasi */
+    justify-content: space-between; /* Memisahkan logo di ujung kiri dan menu link di ujung kanan */
+    align-items: center;            /* Menyejajarkan elemen logo dan menu secara vertikal di tengah */
+    padding: 20px 10%;              /* Memberi jarak dalam: 20px atas-bawah dan 10% di sisi kiri-kanan */
+    background-color: rgba(13, 13, 19, 0.95); /* Warna latar belakang gelap dengan transparansi 95% */
+    position: fixed;                /* Navigasi menempel di atas saat di-scroll */
+    width: 100%;                    /* Mengatur lebar area navbar agar memenuhi layar (100%) */
+    top: 0;                         /* Menempelkan navbar tepat di batas paling atas layar */
+    z-index: 1000;                  /* Memastikan navbar berada di lapisan paling depan dibanding elemen lain */
+}
+
+.logo {
+    font-size: 1.8rem;              /* Mengatur ukuran huruf teks logo sebesar 1.8rem */
+    font-weight: 800;               /* Membuat ketebalan huruf teks logo menjadi sangat tebal (Extra Bold) */
+    letter-spacing: 2px;            /* Memberikan jarak antar huruf pada teks logo sebesar 2 piksel */
+}
+
+.logo span {
+    color: #9d4edd;                 /* Sentuhan warna ungu pada teks VIBES */
+}
+
+.nav-links {
+    display: flex;                  /* Mengaktifkan flexbox agar daftar menu berjejer ke samping */
+    list-style: none;               /* Menghilangkan simbol poin (bullet points) pada daftar menu */
+}
+
+.nav-links li a {
+    color: white;                   /* Mengatur warna teks menu tautan menjadi putih */
+    text-decoration: none;          /* Menghapus garis bawah bawaan pada menu tautan */
+    margin-left: 20px;              /* Memberikan jarak antar menu link di sisi kiri sebesar 20 piksel */
+    font-weight: 600;               /* Mengatur ketebalan teks menu menjadi semi-bold */
+    transition: color 0.3s;         /* Memberikan efek transisi halus selama 0.3 detik saat warna berubah */
+}
+
+.nav-links li a:hover {
+    color: #ff9e00;                 /* Berubah warna menjadi oranye saat kursor mendekat */
+}
+
+/* HERO SECTION & COUNTDOWN */
+.hero {
+    height: 100vh;                  /* Mengatur tinggi hero section agar memenuhi satu layar penuh */
+    background: linear-gradient(rgba(13, 22, 35, 0.7), #0d0d13), url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200') no-repeat center center/cover; 
+    /* Memberikan latar belakang gambar estetik dengan lapisan gradasi gelap agar teks terbaca */
+    display: flex;                  /* Mengaktifkan flexbox untuk mengatur posisi konten di dalam hero section */
+    justify-content: center;        /* Mengatur posisi konten agar berada di tengah secara horizontal */
+    align-items: center;            /* Mengatur posisi konten agar berada di tengah secara vertikal */
+    text-align: center;             /* Mengatur perataan teks konten agar berada di tengah */
+    padding-top: 80px;              /* Memberikan jarak atas agar konten tidak terlalu mepet dengan navbar */
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;              /* Mengatur ukuran teks judul utama menjadi sangat besar */
+    font-weight: 800;               /* Mengatur ketebalan huruf judul menjadi ekstra tebal */
+    margin-bottom: 10px;            /* Memberikan jarak luar sebesar 10 piksel di bawah judul h1 */
+    line-height: 1.2;               /* Mengatur kerapatan/jarak antar baris kalimat judul h1 */
+}
+
+.countdown-container {
+    display: flex;                  /* Mengaktifkan flexbox untuk menyejajarkan kotak hitung mundur */
+    justify-content: center;        /* Mengatur posisi seluruh kotak hitung mundur berada di tengah */
+    gap: 20px;                      /* Memberikan jarak konstan sebesar 20 piksel antar kotak waktu */
+    margin: 30px 0;                 /* Jarak luar: 30px atas-bawah dan 0 di sisi kiri-kanan */
+}
+
+.time-box {
+    background: rgba(157, 78, 221, 0.2); /* Warna latar belakang ungu transparan */
+    border: 2px solid #9d4edd;      /* Memberikan garis tepi berwarna ungu pada kotak waktu */
+    padding: 15px 25px;             /* Memberikan jarak dalam: 15px atas-bawah dan 25px kiri-kanan */
+    border-radius: 10px;            /* Membuat sudut-sudut kotak waktu melengkung halus */
+    min-width: 90px;                /* Membatasi lebar minimal kotak waktu sebesar 90 piksel */
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4); /* Memberikan efek bias cahaya ungu di sekitar kotak */
+}
+
+.time-box span {
+    font-size: 2.5rem;              /* Mengatur ukuran angka di dalam kotak waktu menjadi besar */
+    font-weight: 800;               /* Mengatur ketebalan huruf angka menjadi sangat tebal */
+    display: block;                 /* Mengubah elemen span menjadi block agar teks keterangan di bawahnya otomatis turun */
+}
+
+.btn-primary {
+    background-color: #ff9e00;      /* Mengatur warna dasar tombol aksi utama menjadi oranye cerah */
+    color: #0d0d13;                 /* Mengubah warna teks di dalam tombol menjadi hitam gelap kontras */
+    padding: 15px 35px;             /* Memberikan ruang ketukan (padding): 15px atas-bawah dan 35px kiri-kanan */
+    text-decoration: none;          /* Menghapus garis bawah bawaan dari tag tautan tombol */
+    font-weight: 800;               /* Mengatur ketebalan huruf tombol menjadi sangat tebal */
+    border-radius: 50px;            /* Membuat bentuk tombol lonjong kapsul sempurna */
+    display: inline-block;          /* Mengubah elemen menjadi inline-block agar margin dan padding berfungsi baik */
+    box-shadow: 0 4px 15px rgba(255, 158, 0, 0.4); /* Memberikan efek bayangan bias oranye tipis di bawah tombol */
+    transition: transform 0.3s, box-shadow 0.3s; /* Mengatur transisi animasi perubahan yang halus selama 0.3 detik */
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);    /* Efek melompat sedikit ke atas saat disorot kursor */
+    box-shadow: 0 6px 20px rgba(255, 158, 0, 0.6); /* Membuat efek bayangan oranye di bawahnya menjadi lebih tajam */
+}
+
+/* LINEUP (GRID SYSTEM) */
+.lineup, .schedule, .tickets, .location {
+    padding: 80px 10%;              /* Mengatur ruang pembatas dalam section: 80px atas-bawah dan 10% kiri-kanan */
+}
+
+.artist-grid {
+    display: grid;                  /* Mengaktifkan tata letak CSS Grid */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    /* Membuat grid responsif yang otomatis menyesuaikan ukuran layar min 280px per kartu */
+    gap: 30px;                      /* Mengatur jarak celah antar kartu artis sebesar 30 piksel */
+}
+
+.artist-card {
+    position: relative;             /* Mengatur basis posisi relatif agar elemen info di dalamnya bisa diposisikan absolut */
+    border-radius: 15px;            /* Mengatur tingkat lengkungan sudut kartu sebesar 15 piksel */
+    overflow: hidden;               /* Memotong gambar yang keluar dari area lengkungan border-radius */
+    height: 400px;                  /* Mengunci tinggi kartu profil artis sebesar 400 piksel */
+    border: 1px solid #333;         /* Memberikan garis batas tepi kartu tipis berwarna abu-abu gelap */
+}
+
+.artist-card img {
+    width: 100%;                    /* Mengatur lebar gambar agar memenuhi kapasitas lebar kartu */
+    height: 100%;                   /* Mengatur tinggi gambar agar memenuhi kapasitas tinggi kartu */
+    object-fit: cover;              /* Mengatur agar gambar dipotong secara proporsional sesuai rasio kartu */
+    transition: transform 0.5s;     /* Memberikan efek transisi selama 0.5 detik saat gambar melakukan animasi zoom */
+}
+
+.artist-card:hover img {
+    transform: scale(1.1);          /* Gambar membesar perlahan (zoom 10%) saat di-hover kursor */
+}
+
+.artist-info {
+    position: absolute;             /* Mengunci posisi info teks secara absolut di dalam kartu */
+    bottom: 0;                      /* Menempelkan info teks tepat di bagian dasar bawah kartu */
+    left: 0;                        /* Menempelkan info teks tepat di batas kiri kartu */
+    width: 100%;                    /* Mengatur lebar info teks memenuhi lebar kartu */
+    padding: 20px;                  /* Memberikan ruang dalam teks informasi sebesar 20 piksel */
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); /* Gradasi hitam pelindung teks agar mudah dibaca */
+}
+
+/* SCHEDULE (TABLE) */
+.table-container {
+    overflow-x: auto;               /* Agar tabel bisa di-geser ke samping pada layar HP yang sempit */
+}
+
+table {
+    width: 100%;                    /* Mengatur lebar tabel agar penuh seukuran kontainer pembungkusnya */
+    border-collapse: collapse;      /* Menyatukan garis pembatas sel tabel agar terlihat rapi dan tidak ganda */
+    margin-top: 20px;               /* Memberikan sekat jarak luar sebesar 20 piksel di atas tabel */
+}
+
+th, td {
+    padding: 20px;                  /* Memberikan ketebalan ruang dalam sel tabel sebesar 20 piksel */
+    text-align: left;               /* Mengatur teks isi tabel agar rata kiri */
+    border-bottom: 1px solid #333;  /* Memberikan garis pembatas baris tabel tipis berwarna abu-abu gelap */
+}
+
+th {
+    background-color: #9d4edd;      /* Mengatur warna latar belakang kepala kolom tabel menjadi ungu */
+    color: white;                   /* Mengatur warna teks kepala kolom menjadi putih */
+}
+
+tr:hover {
+    background-color: rgba(255, 255, 255, 0.05); /* Sorotan baris tabel (highlight) saat kursor berada di atasnya */
+}
+
+/* TICKETS (FLEXBOX) */
+.ticket-container {
+    display: flex;                  /* Mengaktifkan sistem layouting Flexbox */
+    justify-content: center;        /* Memposisikan kartu-kartu tiket agar berada di tengah secara horizontal */
+    align-items: center;            /* Menyejajarkan posisi kartu tiket di tengah secara vertikal */
+    gap: 40px;                      /* Mengatur celah pemisah antar kartu tiket sebesar 40 piksel */
+    flex-wrap: wrap;                /* Jika layar perangkat sempit, kartu otomatis turun ke bawah secara fleksibel */
+}
+
+.ticket-card {
+    background-color: #161622;      /* Mengatur latar belakang kartu dengan warna abu-abu keunguan gelap */
+    border: 1px solid #ff9e00;      /* Memberikan garis luar pembatas kartu berwarna oranye */
+    padding: 40px 30px;             /* Jarak dalam kartu: 40px atas-bawah dan 30px kiri-kanan */
+    border-radius: 20px;            /* Mengatur tingkat lengkungan sudut kartu sebesar 20 piksel */
+    width: 320px;                   /* Mengunci dimensi lebar kartu tiket sebesar 320 piksel */
+    text-align: center;             /* Mengatur seluruh perataan teks di dalam kartu agar rata tengah */
+    position: relative;             /* Mengatur posisi relatif agar elemen badge status bisa dikunci posisinya */
+}
+
+/* Membedakan kartu VIP agar lebih menonjol */
+.ticket-card.VIP {
+    border: 2px solid #ff9e00;      /* Memberikan garis border yang lebih tebal khusus kartu VIP */
+    transform: scale(1.05);         /* Mengatur skala ukuran kartu agar sedikit lebih besar dibanding kartu biasa */
+    box-shadow: 0 0 25px rgba(255, 158, 0, 0.2); /* Memberikan bayangan aura oranye tipis di sekeliling kartu VIP */
+}
+
+.badge {
+    position: absolute;             /* Mengunci posisi label penanda secara absolut di atas kartu */
+    top: -15px;                     /* Menaruh posisi badge sedikit keluar menembus batas atas kartu */
+    left: 50%;                      /* Memposisikan badge di tengah horizontal */
+    transform: translateX(-50%);    /* Menyeimbangkan titik koordinat agar lurus simetris di tengah kartu */
+    background-color: #ff9e00;      /* Mengubah warna latar belakang badge menjadi oranye */
+    color: #0d0d13;                 /* Mengubah warna teks badge menjadi hitam gelap */
+    padding: 5px 15px;              /* Memberikan padding dalam badge: 5px atas-bawah dan 15px kiri-kanan */
+    font-size: 0.8rem;              /* Mengatur ukuran huruf teks badge menjadi kecil */
+    font-weight: 800;               /* Mengatur ketebalan huruf badge menjadi sangat tebal */
+    border-radius: 20px;            /* Melengkungkan sudut kapsul badge sebesar 20 piksel */
+    text-transform: uppercase;      /* Memaksa teks badge ditulis dengan huruf kapital semua */
+}
+
+.price {
+    font-size: 2rem;                /* Mengatur ukuran teks nominal harga menjadi besar */
+    font-weight: 800;               /* Mengatur ketebalan font nominal harga menjadi tebal */
+    margin: 20px 0;                 /* Memberikan sekat jarak luar vertikal sebesar 20 piksel atas dan bawah */
+    color: #9d4edd;                 /* Mengubah warna nominal teks harga menjadi ungu */
+}
+
+.ticket-card ul {
+    list-style: none;               /* Menghilangkan simbol bulat bawaan list pada detail benefit tiket */
+    margin-bottom: 30px;            /* Jarak pisah di bawah daftar benefit sebelum beralih ke tombol */
+    text-align: left;               /* Mengatur teks daftar benefit agar berjejer rapi di sebelah rata kiri */
+}
+
+.ticket-card ul li {
+    margin-bottom: 10px;            /* Memberikan sekat jarak vertikal antar baris benefit sebesar 10 piksel */
+    font-size: 0.9rem;              /* Ukuran teks detail benefit */
+}
+
+.btn-buy {
+    width: 100%;                    /* Mengatur lebar tombol beli memenuhi kapasitas lebar kartu */
+    padding: 12px;                  /* Memberikan ketebalan ketukan dalam tombol sebesar 12 piksel */
+    background-color: transparent;  /* Menyetel latar belakang awal tombol menjadi transparan */
+    color: white;                   /* Mengatur warna teks tombol menjadi putih */
+    border: 2px solid #9d4edd;      /* Memberikan garis bingkai tepi luar berwarna ungu */
+    border-radius: 25px;            /* Melengkungkan sudut tombol menjadi melingkar halus */
+    cursor: pointer;                /* Merubah ikon kursor menjadi penanda klik tangan saat diarahkan ke tombol */
+    font-weight: 600;               /* Mengatur ketebalan teks tombol menjadi semi-bold */
+    transition: all 0.3s;           /* Mengatur transisi animasi perubahan visual selama 0.3 detik */
+}
+
+.btn-buy:hover {
+    background-color: #9d4edd;      /* Tombol penuh warna ungu saat di-hover kursor */
+}
+
+/* MAPS & FOOTER */
+.map-container {
+    border-radius: 15px;            /* Melengkungkan sedikit sudut siku bingkai peta iframe */
+    overflow: hidden;               /* Memotong elemen peta bagian dalam agar mengikuti bentuk border-radius */
+    border: 2px solid #333;         /* Memberikan bingkai luar pelindung peta berwarna abu-abu gelap */
+}
+
+footer {
+    text-align: center;             /* Memposisikan seluruh teks di dalam footer berada di tengah */
+    padding: 30px;                  /* Memberikan ketebalan ruang dalam footer sebesar 30 piksel */
+    background-color: #08080c;      /* Mengatur warna latar belakang khusus area footer menjadi hitam pekat */
+    font-size: 0.9rem;              /* Mengatur ukuran teks footer */
+    color: #666666;                 /* Mengatur warna teks hak cipta menjadi abu-abu gelap redup */
+}
+
+/* STYLING SOSIAL MEDIA DI FOOTER */
+.footer-container {
+    display: flex;                  /* Mengaktifkan flexbox kontainer footer */
+    flex-direction: column;         /* Menyusun ikon di atas dan teks copyright di bawah secara vertikal */
+    align-items: center;            /* Menata posisi komponen agar presisi di tengah-tengah */
+    gap: 20px;                      /* Jarak pemisah vertikal antara baris grup ikon dan teks hak cipta */
+}
+
+h4 {
+    font-size: 1.2rem;              /* Mengatur ukuran teks sub-judul follow us */
+    color: #9d4edd;                 /* Warna ungu untuk teks "Follow Us" atau judul bagian kontak */
+    margin-bottom: 10px;            /* Jarak pisah di bawah teks judul kontak sebesar 10 piksel */
+}
+
+.social-icons {
+    display: flex;                  /* Menggunakan flexbox untuk menjajarkan deretan ikon tautan media sosial */
+    gap: 25px;                      /* Jarak horizontal celah pemisah antar ikon media sosial sebesar 25 piksel */
+}
+
+.social-icons a {
+    color: #666666;                 /* Warna default abu-abu redup sebelum di-hover kursor */
+    font-size: 1.8rem;              /* Mengatur ukuran skala besar visual fisik ikon media sosial */
+    transition: all 0.3s ease;      /* Efek animasi transisi halus saat warna berubah dan melayang */
+    display: inline-block;          /* Mengubah tautan menjadi elemen inline-block agar efek melayang berfungsi baik */
+}
+
+/* EFEK HOVER: Memberikan warna khas masing-masing medsos saat kursor mendekat */
+.social-icons a.icon-discord:hover {
+    color: #7289da;                 /* Warna khas Discord Biru */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(114, 137, 218, 0.6); /* Efek glow neon sesuai warna identitas ikon */
+}
+
+.social-icons a.icon-whatsapp:hover {
+    color: #25d366;                 /* Warna khas WhatsApp Hijau */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(37, 211, 102, 0.6);  /* Efek glow neon sesuai warna identitas ikon */
+}
+
+.social-icons a.icon-yt:hover {
+    color: #ff0000;                 /* Warna khas YouTube Merah */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);     /* Efek glow neon sesuai warna identitas ikon */
+}
+
+.social-icons a.icon-tiktok:hover {
+    color: #ffffff;                 /* Warna khas TikTok Putih Bersih */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Efek glow neon sesuai warna identitas ikon */
+}
+
+.social-icons a.icon-threads:hover {
+    color: #ffffff;                 /* Warna khas Threads Putih Bersih */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Efek glow neon sesuai warna identitas ikon */
+}
+
+.social-icons a.icon-ig:hover {
+    color: #e1306c;                 /* Warna khas Instagram pink/magenta */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(225, 48, 108, 0.6);  /* Efek glow neon sesuai warna identitas ikon */
+}
+
+.social-icons a.icon-fb:hover {
+    color: #1877f2;                 /* Warna khas Facebook Biru */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(24, 119, 242, 0.6);  /* Efek glow neon sesuai warna identitas ikon */
+}
+
+.social-icons a.icon-x:hover {
+    color: #ffffff;                 /* Warna khas X (Twitter baru) Putih/Minimalis */
+    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Efek glow neon sesuai warna identitas ikon */
+}

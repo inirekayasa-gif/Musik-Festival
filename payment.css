@@ -1,0 +1,460 @@
+/* =========================================================================
+   1. RESET STYLING & ATURAN GLOBAL Halaman
+   ========================================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Memastikan padding tidak merusak ukuran total elemen */
+}
+
+body.payment-body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #0d0d13; /* Hitam pekat modern senada dengan konsep konser */
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px; /* Jarak atas agar konten tidak tertutup oleh navbar fixed */
+}
+
+/* =========================================================================
+   2. ATURAN BAGIAN KEPALA (Navbar Header)
+   ========================================================================= */
+.payment-header {
+    width: 100%;
+    padding: 20px 10%;
+    background-color: rgba(13, 13, 19, 0.95);
+    border-bottom: 1px solid #222;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Mengunci posisi header di bagian atas saat di-scroll */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Menjamin header berada di lapisan paling depan */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: #9d4edd; /* Aksen warna ungu ikonik festival */
+}
+
+.btn-back {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.btn-back:hover {
+    color: #ff9e00; /* Transisi halus berubah oranye saat disorot kursor */
+}
+
+/* =========================================================================
+   3. INDIKATOR ALUR PROGRES TAHAPAN (Step Indicator)
+   ========================================================================= */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #444455; /* Warna abu-abu redup penanda step belum dilewati */
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.step.active {
+    color: #9d4edd; /* Berubah ungu menyala ketika user berada di step ini */
+}
+
+.step-number {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #161622;
+    border: 2px solid #444455;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.step.active .step-number {
+    background-color: #9d4edd;
+    border-color: #9d4edd;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.5); /* Efek lingkaran bersinar (glow) */
+}
+
+/* =========================================================================
+   4. STRUKTUR UTAMA KOTAK FORMULIR (Main Payment Box)
+   ========================================================================= */
+.payment-box {
+    background-color: #161622; /* Kontainer abu gelap agar form terlihat kontras */
+    border: 1px solid #2d2d3f;
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #ff9e00; /* Warna judul kuning-oranye khas tombol utama */
+    margin-bottom: 5px;
+}
+
+.step-subtitle {
+    font-size: 0.9rem;
+    color: #8888a0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* --- Logika Dasar Pengontrol Tampilan Form Multi-Step --- */
+.form-step {
+    display: none; /* Menyembunyikan langkah form secara default */
+}
+
+.form-step.active {
+    display: block; /* Menampilkan isi langkah form yang sedang aktif diproses JS */
+}
+
+/* =========================================================================
+   5. ATURAN INPUT FORMULIR - TAHAP 1 (Identitas Pelanggan)
+   ========================================================================= */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #ccccdd;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 14px;
+    background-color: #0d0d13;
+    border: 1px solid #3d3d5c;
+    border-radius: 10px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: #9d4edd; /* Frame input menyala ungu saat diklik/diketik oleh user */
+}
+
+/* =========================================================================
+   6. GRID & KARTU LAYANAN NYATA - TAHAP 2 (Metode Pembayaran)
+   ========================================================================= */
+.category-title {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #9d4edd;
+    margin: 25px 0 12px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px; /* Memberi jarak antar huruf sub-kategori metode */
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Grid responsif menyesuaikan lebar layar hp/pc */
+    gap: 15px;
+}
+
+.provider-card {
+    background-color: #0d0d13;
+    border: 1px solid #3d3d5c;
+    color: white;
+    padding: 20px 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.provider-card i {
+    font-size: 1.6rem;
+    color: #ff9e00;
+}
+
+.provider-card:hover {
+    border-color: #ff9e00;
+    transform: translateY(-3px); /* Efek melayang naik sedikit saat didekati kursor */
+    box-shadow: 0 5px 15px rgba(255, 158, 0, 0.2);
+}
+
+.provider-card.full-width {
+    width: 100%;
+    flex-direction: row; /* Layout mendatar khusus untuk tombol lebar QRIS */
+    justify-content: center;
+    gap: 15px;
+    padding: 18px;
+}
+
+/* =========================================================================
+   7. DETAIL TRANSAKSI & DETAIL HARGA - TAHAP 3 (Halaman Pembayaran)
+   ========================================================================= */
+/* --- A. Countdown Batas Waktu Bayar (Opsi B) --- */
+.timer-box-step3 {
+    background-color: rgba(255, 158, 0, 0.1);
+    border: 1px solid #ff9e00;
+    color: #ff9e00;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.timer-box-step3 strong {
+    font-size: 1.1rem;
+    font-weight: 800;
+}
+
+/* --- B. Kotak Ringkasan Rincian Invoice (Opsi A) --- */
+.invoice-box {
+    background-color: #12121c;
+    border: 1px solid #3d3d5c;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.invoice-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #ccccdd;
+    margin-bottom: 10px;
+}
+
+.invoice-row strong {
+    color: #ff9e00;
+}
+
+.invoice-divider {
+    border: none;
+    border-top: 1px solid #3d3d5c;
+    margin: 12px 0;
+}
+
+.invoice-row.total {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.invoice-row.total span:last-child {
+    color: #ff9e00;
+    text-shadow: 0 0 10px rgba(255, 158, 0, 0.3);
+}
+
+/* --- C. Kontainer Detail Metode Pembayaran Dinamis --- */
+.payment-detail-box {
+    background-color: #0d0d13;
+    border: 1px solid #3d3d5c;
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.dynamic-content {
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* --- D. Komponen Copy / Salin Nomor Virtual Account --- */
+.va-copy-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #161622;
+    border: 1px dashed #9d4edd;
+    border-radius: 10px;
+    padding: 12px 20px;
+    margin: 15px 0;
+}
+
+.va-number-display {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.btn-copy {
+    background: none;
+    border: none;
+    color: #ff9e00;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px 10px;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.btn-copy:hover {
+    color: #9d4edd;
+    transform: scale(1.1);
+}
+
+.btn-copy span {
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* --- E. Tampilan QRIS Cetak Putih --- */
+.barcode-simulasi {
+    background-color: white; /* Latar putih wajib agar sensor scanner kamera berfungsi optimal */
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 15px auto;
+}
+
+.barcode-simulasi i {
+    font-size: 8rem;
+    color: #000000;
+    display: block;
+}
+
+/* =========================================================================
+   8. NOTIFIKASI PENGIRIMAN ETICKET SUKSES - TAHAP 4 (Selesai)
+   ========================================================================= */
+.validation-status {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.status-icon {
+    font-size: 3.5rem;
+    color: #9d4edd;
+    margin-bottom: 20px;
+}
+
+.summary-box {
+    background-color: #0d0d13;
+    border-left: 4px solid #ff9e00; /* Garis aksen oranye vertikal di sisi kiri box summary */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.summary-title {
+    font-size: 0.85rem;
+    color: #8888a0;
+    margin-bottom: 12px;
+}
+
+.summary-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.summary-item i.icon-wa { color: #25d366; } /* Warna hijau resmi ikon WhatsApp */
+.summary-item i.icon-mail { color: #ea4335; } /* Warna merah resmi ikon Gmail */
+
+.warning-text {
+    font-size: 0.8rem;
+    color: #666680;
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* =========================================================================
+   9. TOMBOL AKSI UTAMA DAN SEKUNDER (Navigasi Button)
+   ========================================================================= */
+/* --- Tombol Utama (Primary Button / Maju / Bayar) --- */
+.btn-action {
+    width: 100%;
+    background-color: #ff9e00;
+    color: #0d0d13;
+    border: none;
+    padding: 16px;
+    border-radius: 50px;
+    font-weight: 800;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 25px;
+    box-shadow: 0 4px 15px rgba(255, 158, 0, 0.3);
+    transition: all 0.3s;
+}
+
+.btn-action:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 158, 0, 0.5);
+}
+
+/* --- Tombol Mundur Sekunder (Secondary Button / Kembali / Ubah Metode - Opsi C) --- */
+.btn-secondary {
+    width: 100%;
+    background-color: transparent;
+    color: #8888a0;
+    border: 1px solid #3d3d5c;
+    padding: 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    color: #ffffff;
+    border-color: #9d4edd;
+    background-color: rgba(157, 78, 221, 0.05);
+}
+
+/* --- Modifikasi Keamanan: Membekukan form jika waktu habis (Locking System) --- */
+.disabled-step {
+    opacity: 0.4;
+    pointer-events: none; /* Menolak seluruh interaksi klik dari user ke area elemen ini */
+}

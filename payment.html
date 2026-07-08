@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran Tiket - Summer Vibes Fest 2026</title>
+    <link rel="stylesheet" href="payment.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body class="payment-body">
+
+    <header class="payment-header">
+        <div class="logo">SUMMER<span>VIBES</span></div>
+        <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Kembali ke Beranda</a>
+    </header>
+
+    <div class="step-indicator">
+        <div class="step active" id="step-1-indicator">
+            <div class="step-number">1</div>
+            <span>Identitas</span>
+        </div>
+        <div class="step" id="step-2-indicator">
+            <div class="step-number">2</div>
+            <span>Metode</span>
+        </div>
+        <div class="step" id="step-3-indicator">
+            <div class="step-number">3</div>
+            <span>Bayar</span>
+        </div>
+        <div class="step" id="step-4-indicator">
+            <div class="step-number">4</div>
+            <span>Selesai</span>
+        </div>
+    </div>
+
+    <main class="payment-box">
+        <form id="paymentForm" onsubmit="event.preventDefault();">
+            
+            <section class="form-step active" id="step-1">
+                <h2>Isi Identitas Diri</h2>
+                <p class="step-subtitle">Pastikan data sesuai dengan kartu identitas resmi Anda</p>
+                
+                <div class="form-group">
+                    <label for="idType">Jenis Identitas</label>
+                    <select id="idType">
+                        <option value="KTP">KTP (Kartu Tanda Penduduk)</option>
+                        <option value="SIM">SIM (Surat Izin Mengemudi)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="idNumber">Nomor Identitas</label>
+                    <input type="text" id="idNumber" placeholder="Masukkan nomor KTP / SIM Anda">
+                </div>
+                <div class="form-group">
+                    <label for="fullName">Nama Sesuai Identitas</label>
+                    <input type="text" id="fullName" placeholder="Masukkan nama lengkap Anda">
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Nomor HP / WhatsApp</label>
+                    <input type="tel" id="phoneNumber" placeholder="Contoh: 081234567xxx">
+                </div>
+                <div class="form-group">
+                    <label for="emailAddress">Alamat Email</label>
+                    <input type="email" id="emailAddress" placeholder="Contoh: nama@email.com">
+                </div>
+
+                <button type="button" class="btn-action" id="btn-to-step2">Lanjut ke Metode Pembayaran</button>
+            </section>
+
+
+            <section class="form-step" id="step-2">
+                <h2>Pilih Metode Pembayaran</h2>
+                <p class="step-subtitle">Klik pada salah satu penyedia layanan di bawah ini</p>
+                
+                <div class="payment-options">
+                    <div class="category-title">Virtual Account (Transfer Bank)</div>
+                    <div class="option-grid">
+                        <button type="button" class="provider-card" data-type="va" data-name="Bank BRI">
+                            <i class="fa-solid fa-bank"></i> <span>Bank BRI</span>
+                        </button>
+                        <button type="button" class="provider-card" data-type="va" data-name="Bank BCA">
+                            <i class="fa-solid fa-bank"></i> <span>Bank BCA</span>
+                        </button>
+                        <button type="button" class="provider-card" data-type="va" data-name="Bank Mandiri">
+                            <i class="fa-solid fa-bank"></i> <span>Bank Mandiri</span>
+                        </button>
+                        <button type="button" class="provider-card" data-type="va" data-name="Bank BSI">
+                            <i class="fa-solid fa-bank"></i> <span>Bank BSI</span>
+                        </button>
+                    </div>
+
+                    <div class="category-title">E-Wallet (Buka Aplikasi Otomatis)</div>
+                    <div class="option-grid">
+                        <button type="button" class="provider-card" data-type="wallet" data-name="ShopeePay">
+                            <i class="fa-solid fa-wallet"></i> <span>ShopeePay</span>
+                        </button>
+                        <button type="button" class="provider-card" data-type="wallet" data-name="Gopay">
+                            <i class="fa-solid fa-wallet"></i> <span>Gopay</span>
+                        </button>
+                        <button type="button" class="provider-card" data-type="wallet" data-name="LinkAja">
+                            <i class="fa-solid fa-wallet"></i> <span>LinkAja</span>
+                        </button>
+                    </div>
+
+                    <div class="category-title">QR Code</div>
+                    <button type="button" class="provider-card full-width" data-type="qris" data-name="QRIS Barcode">
+                        <i class="fa-solid fa-qrcode"></i> <span>QRIS (Scan Melalui Aplikasi Apa Saja)</span>
+                    </button>
+                </div>
+
+                <button type="button" class="btn-action" id="btn-to-step3">Lanjut ke Halaman Pembayaran</button> 
+
+                <button type="button" class="btn-secondary" id="btn-back-to-step1">
+                    <i class="fa-solid fa-chevron-left"></i> Kembali & Ubah Identitas
+                </button>
+            </section>
+
+
+            <section class="form-step" id="step-3">
+                <h2>Selesaikan Pembayaran</h2>
+                <p class="step-subtitle">Silakan bayar menggunakan detail di bawah ini</p>
+
+                <div class="timer-box-step3">
+                    <i class="fa-regular fa-clock"></i> 
+                    <span>Selesaikan pembayaran dalam waktu: <strong id="payment-countdown">10:00</strong></span>
+                </div>
+                            
+                <div class="invoice-box">
+                    <div class="invoice-row">
+                        <span>Kategori Tiket (<strong id="invoice-ticket-name">VIP Pass</strong>)</span>
+                        <span id="invoice-base-price">Rp 0</span>
+                    </div>
+                    <div class="invoice-row">
+                        <span>Biaya Administrasi</span>
+                        <span id="invoice-admin-fee">Rp 5.000</span>
+                    </div>
+                    <div class="invoice-row">
+                        <span>PPN 12%</span>
+                        <span id="invoice-tax">Rp 0</span>
+                    </div>
+                    <hr class="invoice-divider">
+                    <div class="invoice-row total">
+                        <span>Total Tagihan</span>
+                        <span id="invoice-total-price">Rp 0</span>
+                    </div>
+                </div>
+
+                <div class="payment-detail-box">
+                    <p style="text-align: center; margin-bottom: 10px; color:#aaa;">Penyedia: <strong id="selected-provider-text" style="color:#ff9e00;">-</strong></p>
+                    <div id="dynamic-payment-content" class="dynamic-content">
+                        </div>
+                </div>
+
+                <button type="button" class="btn-action" id="btn-to-step4">Saya Sudah Melakukan Pembayaran</button>
+
+                <button type="button" class="btn-secondary" id="btn-back-to-step2">
+                    <i class="fa-solid fa-rotate-left"></i> Ubah Metode Pembayaran
+                </button>
+            </section>
+
+
+            <section class="form-step" id="step-4">
+                <div class="validation-status">
+                    <i class="fa-solid fa-circle-check status-icon" style="color: #00e676; text-shadow: 0 0 15px rgba(0, 230, 118, 0.4);"></i>
+                    <h2>Tiket Dalam Proses Pengiriman!</h2>
+                    <p class="step-subtitle">Pembayaran Anda berhasil kami terima.</p>
+                </div>
+
+                <div class="summary-box">
+                    <p class="summary-title">E-Ticket PDF resmi beserta kode akses panggung sedang dikirim ke:</p>
+                    <div class="summary-item">
+                        <i class="fa-brands fa-whatsapp icon-wa"></i>
+                        <span id="dest-wa">0812xxx (WhatsApp)</span>
+                    </div>
+                    <div class="summary-item">
+                        <i class="fa-solid fa-envelope icon-mail"></i>
+                        <span id="dest-email">nama@email.com</span>
+                    </div>
+                </div>
+
+                <p class="warning-text" style="color: #ff9e00;">
+                    *Mohon periksa folder 'Kotak Masuk' atau 'Spam' pada email Anda dalam waktu 5-10 menit ke depan.
+                </p>
+                
+                <a href="index.html" class="btn-secondary" style="text-align: center; text-decoration: none; display: block; margin-top: 30px;">Kembali ke Halaman Utama</a>
+            </section>
+
+        </form>
+    </main>
+
+    <script src="payment.js"></script>
+</body>
+</html>
