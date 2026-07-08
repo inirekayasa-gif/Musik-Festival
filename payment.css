@@ -31,7 +31,6 @@ body.payment-body {
     align-items: center;
     position: fixed; /* Mengunci posisi header di bagian atas saat di-scroll */
     top: 0;
-    left: 0;
     z-index: 1000; /* Menjamin header berada di lapisan paling depan */
 }
 
