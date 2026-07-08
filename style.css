@@ -394,84 +394,84 @@ h4 {
 .social-icons a.icon-fb:hover        { color: #1877f2; transform: translateY(-5px); text-shadow: 0 0 15px rgba(24, 119, 242, 0.6); }
 .social-icons a.icon-x:hover         { color: #ffffff; transform: translateY(-5px); text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
 
-
 /* =========================================================================
-   8. RESPONSIVE DESIGN FOR MOBILE PHONE (Optimalisasi Layar HP - MAKS 768px)
+   8. PENGATURAN LAYAR HP (Tambahkan di paling bawah style.css)
    ========================================================================= */
 @media screen and (max-width: 768px) {
     
+    /* 1. Mengunci body agar tidak bisa bergeser ke kanan akibat elemen bocor */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* 2. Merampingkan padding seksi halaman */
+    .lineup, .schedule, .tickets, .location {
+        padding: 40px 5%;
+    }
+
+    /* 3. Menghilangkan menu navigasi bawaan di HP agar tidak merusak lebar header */
+    .nav-links {
+        display: none; 
+    }
     .navbar {
         padding: 15px 5%;
-        position: fixed;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    /* 4. MENYEMBUHKAN HERO SECTION (Sesuai Foto Google Chrome HP Kamu) */
+    .hero {
+        padding: 100px 15px 40px 15px;
+        height: auto; /* Melepas tinggi 100vh agar konten tidak terpotong bawah */
+    }
+
+    .hero-content h1 {
+        font-size: 2.0rem; /* Memperkecil judul agar pas masuk di layar HP */
+        line-height: 1.3;
+    }
+
+    /* 5. MENYEMBUHKAN KOTAK COUNTDOWN AGAR TIDAK MELUBER KELUAR */
+    .countdown-container {
+        gap: 8px;          /* Mempersempit jarak antar kotak */
+        margin: 20px 0;
+        flex-wrap: nowrap; /* Memaksa tetap satu baris tapi mengecil secara fleksibel */
+    }
+
+    .time-box {
+        padding: 10px 5px; /* Mengurangi padding dalam kotak secara drastis */
+        min-width: 70px;   /* Mengecilkan lebar minimal kotak dari 90px menjadi 70px */
+        box-shadow: 0 0 10px rgba(157, 78, 221, 0.3);
+    }
+
+    .time-box span {
+        font-size: 1.6rem; /* Mengecilkan ukuran angka penunjuk waktu */
+    }
+    
+    .time-box p {
+        font-size: 0.75rem; /* Mengecilkan teks "Hari", "Jam", "Menit", "Detik" */
+    }
+
+    .btn-primary {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+
+    /* 6. Memaksa Grid Kartu Band Menjadi 1 Kolom ke Bawah */
+    .artist-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .artist-card {
+        height: 320px;
+    }
+
+    /* 7. Memaksa Tiket Lebar Penuh */
+    .ticket-card {
         width: 100%;
-        justify-content: space-between;
     }
-
-    /* 1. MENGAKTIFKAN TOMBOL HAMBURGER DI HP */
-    .menu-toggle {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 25px;
-        height: 18px;
-        cursor: pointer;
-        z-index: 1001; /* Berada di atas layer menu */
+    .ticket-card.VIP {
+        transform: scale(1); /* Mematikan scale pembesaran di HP agar tidak menabrak sisi screen */
     }
-
-    .menu-toggle .bar {
-        height: 3px;
-        width: 100%;
-        background-color: #ffffff;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
-
-    /* 2. MENGUBAH MENU NAV-LINKS MENJADI PANEL SLIDE-DOWN DI HP */
-    .nav-links {
-        display: flex; /* Aktifkan kembali flexbox */
-        flex-direction: column;
-        position: absolute;
-        top: -400px; /* Sembunyikan menu jauh di atas layar saat awal load */
-        left: 0;
-        width: 100%;
-        background-color: rgba(13, 13, 19, 0.98); /* Latar belakang gelap solid */
-        padding: 20px 0;
-        text-align: center;
-        border-bottom: 2px solid #9d4edd;
-        transition: all 0.4s ease; /* Efek transisi meluncur ke bawah */
-        z-index: 999;
-    }
-
-    /* Ketika class 'active' dipicu oleh JavaScript, menu meluncur ke bawah pas di bawah navbar */
-    .nav-links.active {
-        top: 60px; 
-    }
-
-    .nav-links li {
-        margin: 15px 0; /* Memberi jarak vertikal antar menu di HP agar mudah ditekan jari */
-    }
-
-    .nav-links li a {
-        margin-left: 0; /* Reset margin desktop */
-        font-size: 1.1rem;
-        display: block;
-    }
-
-    /* 3. ANIMASI TOMBOL HAMBURGER MENJADI HURUF "X" SAAT AKTIF (OPSIONAL & ESTETIK) */
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: translateY(7.5px) rotate(45deg);
-        background-color: #ff9e00;
-    }
-    .menu-toggle.active .bar:nth-child(2) {
-        opacity: 0; /* Hilangkan garis tengah */
-    }
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: translateY(-7.5px) rotate(-45deg);
-        background-color: #ff9e00;
-    }
-}
-
-/* Pastikan di luar @media (di bagian style desktop atas), .menu-toggle disembunyikan */
-.menu-toggle {
-    display: none;
 }
