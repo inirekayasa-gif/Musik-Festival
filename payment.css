@@ -463,6 +463,14 @@ h2 {
    10. RESPONSIVE DESIGN UNTUK LAYAR HP (MOBILE OPTIMIZATION)
    ========================================================================= */
 @media screen and (max-width: 768px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
     
     /* 1. Kontainer Utama Indikator: Menjaga posisi horizontal di tengah layar */
     .step-indicator {
@@ -491,7 +499,7 @@ h2 {
         visibility: visible !important;
         font-size: 0.65rem !important;     /* Ukuran font dibuat mini/ramping agar pas di layar HP */
         font-weight: 700 !important;       /* Membuat teks cukup tebal agar mudah dibaca */
-        color: #ccccdd !important;         /* Warna teks abu-abu terang yang elegan */
+        color: #ccccdd !important;       /* Warna teks putih yang elegan */
         text-align: center !important;     /* Teks rata tengah tepat di bawah lingkaran */
         text-transform: uppercase;         /* Membuat teks menjadi huruf kapital semua */
         white-space: nowrap;               /* Mencegah teks patah menjadi 2 baris jika terlalu panjang */
