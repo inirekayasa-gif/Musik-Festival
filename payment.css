@@ -71,7 +71,7 @@ body.payment-body {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: #444455; /* Warna abu-abu redup penanda step belum dilewati */
+    color: #ccccdd; /* Warna putih penanda step belum dilewati */
     font-weight: 600;
     transition: color 0.3s;
 }
