@@ -520,38 +520,5 @@ h2 {
 
     .va-number-display {
         font-size: 1.3rem;
-    }
-
-   /* 1. Merampingkan kotak container timer agar tidak terlalu tebal */
-    .timer-container {
-        padding: 12px 15px !important; /* Mengurangi padding atas-bawah */
-        margin-bottom: 20px !important; /* Mengatur jarak ke kotak detail di bawahnya */
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        gap: 8px !important; /* Memberikan jarak rapat antara ikon, teks, dan angka */
-    }
-
-    /* 2. Menyelaraskan teks instruksi dan angka timer agar sejajar ke samping */
-    .timer-container p {
-        font-size: 0.85rem !important; /* Sedikit mengecilkan teks instruksi */
-        margin: 0 !important; /* Menghapus margin bawaan yang membuat teks turun ke bawah */
-        display: inline-block !important;
-    }
-
-    /* 3. Menyesuaikan ukuran angka hitung mundur (09:27) */
-    .timer-container #timer, 
-    .timer-container span,
-    .timer-container .timer-digits { 
-        font-size: 0.95rem !important; /* Membuat ukuran angka tidak terlalu intimidatif */
-        font-weight: 800 !important;
-        display: inline-block !important;
-        margin-left: 3px !important;
-    }
-
-    /* 4. Mengecilkan ukuran ikon jam di sebelah kiri */
-    .timer-container i {
-        font-size: 0.95rem !important;
-    }
+    } 
 }
-
