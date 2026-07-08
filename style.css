@@ -342,7 +342,9 @@ tr:hover td {
     border-radius: 15px;            /* Melengkungkan sedikit sudut siku bingkai peta iframe */
     overflow: hidden;               /* Memotong elemen peta bagian dalam agar mengikuti bentuk border-radius */
     border: 2px solid #2d2d3f;      /* Memberikan bingkai luar pelindung peta berwarna abu-abu gelap */
-    height: 400px;
+    height: 450px;
+    width: 100%;
+    margin-top: 20px;
 }
 
 .map-container iframe {
@@ -397,7 +399,7 @@ h4 {
 /* =========================================================================
    8. PENGATURAN LAYAR HP (Tambahkan di paling bawah style.css)
    ========================================================================= */
-@media screen and (max-width: 768px) {
+    @media screen and (max-width: 768px) {
     
     /* 1. Mengunci body agar tidak bisa bergeser ke kanan akibat elemen bocor */
     html, body {
@@ -414,9 +416,11 @@ h4 {
     .nav-links {
         display: none; 
     }
+
     .navbar {
         padding: 15px 5%;
     }
+
     .logo {
         font-size: 1.3rem;
     }
