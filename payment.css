@@ -522,4 +522,14 @@ h2 {
         font-size: 0.9rem !important;
         margin: 0 !important;              /* Menghapus margin bawaan komputer/laptop */
     }
+   .va-copy-wrapper {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .va-number-display {
+        font-size: 1.3rem;
+    }
 }
