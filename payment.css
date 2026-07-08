@@ -458,3 +458,67 @@ h2 {
     opacity: 0.4;
     pointer-events: none; /* Menolak seluruh interaksi klik dari user ke area elemen ini */
 }
+
+/* =========================================================================
+   10. RESPONSIVE DESIGN UNTUK LAYAR HP (MOBILE OPTIMIZATION)
+   ========================================================================= */
+@media screen and (max-width: 768px) {
+    
+    html, body.payment-body {
+        width: 100%;
+        overflow-x: hidden;
+        padding-top: 100px; /* Mengurangi jarak atas */
+    }
+
+    .payment-header {
+        padding: 15px 5%;
+    }
+
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    /* MENYEMBUHKAN PROGRESS BAR TAHAPAN YANG MELUBER KELUAR LAYER */
+    .step-indicator {
+        gap: 15px; /* Mempersempit jarak step */
+        margin-bottom: 25px;
+    }
+
+    .step span {
+        display: none; /* MENYEMBUNYIKAN teks tulisan step, hanya menyisakan bulatan angka agar muat di HP */
+    }
+
+    /* MENYEMBUHKAN KOTAK UTAMA FORMULIR */
+    .payment-box {
+        padding: 20px 15px; /* Mengecilkan padding dalam box dari 40px ke 15px */
+        width: 95%;         /* Memaksa box memanfaatkan space kanan-kiri HP secara optimal */
+        border-radius: 15px;
+    }
+
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    /* Mengubah grid bank/e-wallet menjadi 2 kolom di HP */
+    .option-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .provider-card {
+        padding: 15px 10px;
+        font-size: 0.8rem;
+    }
+
+    /* Mengatur ulang susunan salin nomor VA agar vertikal ke bawah */
+    .va-copy-wrapper {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .va-number-display {
+        font-size: 1.3rem;
+    }
+}
