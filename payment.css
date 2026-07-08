@@ -464,61 +464,49 @@ h2 {
    ========================================================================= */
 @media screen and (max-width: 768px) {
     
-    html, body.payment-body {
-        width: 100%;
-        overflow-x: hidden;
-        padding-top: 100px; /* Mengurangi jarak atas */
-    }
-
-    .payment-header {
-        padding: 15px 5%;
-    }
-
-    .logo {
-        font-size: 1.3rem;
-    }
-
-    /* MENYEMBUHKAN PROGRESS BAR TAHAPAN YANG MELUBER KELUAR LAYER */
+    /* 1. Kontainer Utama Indikator: Menjaga posisi horizontal di tengah layar */
     .step-indicator {
-        gap: 15px; /* Mempersempit jarak step */
-        margin-bottom: 25px;
+        display: flex !important;
+        flex-direction: row !important; /* Angka tetap berjejer ke samping */
+        justify-content: center !important;
+        gap: 20px; /* Jarak antar kolom tahapan */
+        margin: 20px auto 30px auto;
+        width: 100%;
+        max-width: 400px;
+        padding: 0 10px;
     }
 
+    /* 2. Tiap Blok Tahapan: Mengubah susunan internal menjadi VERTIKAL (Angka di atas, Teks di bawah) */
+    .step {
+        display: flex !important;
+        flex-direction: column !important; /* KUNCI UTAMA: Memaksa elemen turun ke bawah */
+        align-items: center !important;    /* Membuat angka dan teks lurus di tengah */
+        gap: 8px !important;               /* Jarak vertikal antara angka dan teks di bawahnya */
+        flex: 1;                           /* Membagi ruang sama rata */
+    }
+
+    /* 3. Memaksa Teks Font Tahapan Muncul Kembali di Bawah Angka */
     .step span {
-        display: none; /* MENYEMBUNYIKAN teks tulisan step, hanya menyisakan bulatan angka agar muat di HP */
+        display: block !important;         /* Membuka blokir display:none yang menyembunyikan teks */
+        visibility: visible !important;
+        font-size: 0.65rem !important;     /* Ukuran font dibuat mini/ramping agar pas di layar HP */
+        font-weight: 700 !important;       /* Membuat teks cukup tebal agar mudah dibaca */
+        color: #ccccdd !important;         /* Warna teks abu-abu terang yang elegan */
+        text-align: center !important;     /* Teks rata tengah tepat di bawah lingkaran */
+        text-transform: uppercase;         /* Membuat teks menjadi huruf kapital semua */
+        white-space: nowrap;               /* Mencegah teks patah menjadi 2 baris jika terlalu panjang */
     }
 
-    /* MENYEMBUHKAN KOTAK UTAMA FORMULIR */
-    .payment-box {
-        padding: 20px 15px; /* Mengecilkan padding dalam box dari 40px ke 15px */
-        width: 95%;         /* Memaksa box memanfaatkan space kanan-kiri HP secara optimal */
-        border-radius: 15px;
+    /* Mengubah warna teks tahapan yang sedang aktif menjadi warna ungu terang */
+    .step.active span {
+        color: #9d4edd !important;
     }
 
-    h2 {
-        font-size: 1.4rem;
+    /* 4. Menyesuaikan Ukuran Lingkaran Angka Agar Proporsional */
+    .step-number {
+        width: 35px !important;
+        height: 35px !important;
+        font-size: 0.9rem !important;
+        margin: 0 !important;              /* Menghapus margin bawaan komputer/laptop */
     }
-
-    /* Mengubah grid bank/e-wallet menjadi 2 kolom di HP */
-    .option-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-    }
-
-    .provider-card {
-        padding: 15px 10px;
-        font-size: 0.8rem;
-    }
-
-    /* Mengatur ulang susunan salin nomor VA agar vertikal ke bawah */
-    .va-copy-wrapper {
-        flex-direction: column;
-        gap: 12px;
-        text-align: center;
-        padding: 15px;
-    }
-
-    .va-number-display {
-        font-size: 1.3rem;
-    } 
 }
