@@ -1,124 +1,133 @@
-/* RESET & GLOBAL STYLES */
+/* =========================================================================
+   1. RESET & GLOBAL STYLES (Aturan Dasar Seluruh Halaman)
+   ========================================================================= */
 * {
     margin: 0;                      /* Menghapus margin bawaan dari semua elemen browser */
     padding: 0;                      /* Menghapus padding bawaan dari semua elemen browser */
-    box-sizing: border-box;          /* Memastikan padding tidak merusak ukuran elemen */
+    box-sizing: border-box;          /* Memastikan padding tidak merusak ukuran lebar asli elemen */
 }
 
 body {
-    font-family: 'Poppins', sans-serif; /* Menerapkan font Poppins pada seluruh halaman web */
-    background-color: #0d0d13;      /* Warna latar belakang gelap gulita */
-    color: #ffffff;                 /* Mengatur warna teks default menjadi putih */
-    scroll-behavior: smooth;        /* Efek transisi halus saat klik menu navigasi */
+    font-family: 'Poppins', sans-serif; /* Menerapkan font Poppins pada seluruh komponen teks */
+    background-color: #0d0d13;      /* Warna latar belakang gelap pekat khas festival metal/rock */
+    color: #ffffff;                 /* Mengatur warna teks bawaan menjadi putih bersih */
+    scroll-behavior: smooth;        /* Efek transisi meluncur halus saat klik menu navigasi jangkar (#) */
+    overflow-x: hidden;             /* Mencegah halaman bisa digeser ke kanan akibat elemen meluber di HP */
 }
 
 h2 {
-    text-align: center;             /* Mengatur posisi teks judul agar berada di tengah */
-    font-size: 2.5rem;              /* Mengatur ukuran huruf untuk judul utama section */
+    text-align: center;             /* Mengatur posisi teks judul utama agar presisi di tengah */
+    font-size: 2.5rem;              /* Mengatur ukuran huruf default untuk judul utama section */
     margin-bottom: 30px;            /* Memberikan jarak luar sebesar 30 piksel di bawah judul */
-    color: #ff9e00;                 /* Warna judul section oranye menyala */
-    text-shadow: 0 0 10px rgba(255, 158, 0, 0.5); /* Memberikan efek pendaran cahaya oranye pada teks judul */
+    color: #ff9e00;                 /* Warna judul section kuning-oranye menyala */
+    text-shadow: 0 0 10px rgba(255, 158, 0, 0.5); /* Memberikan efek pendaran cahaya (glow) neon oranye */
 }
 
-/* NAVBAR */
+/* =========================================================================
+   2. NAVBAR DESIGN (Navigasi Atas Toko)
+   ========================================================================= */
 .navbar {
     display: flex;                  /* Mengaktifkan flexbox untuk mengatur tata letak menu navigasi */
-    justify-content: space-between; /* Memisahkan logo di ujung kiri dan menu link di ujung kanan */
-    align-items: center;            /* Menyejajarkan elemen logo dan menu secara vertikal di tengah */
-    padding: 20px 10%;              /* Memberi jarak dalam: 20px atas-bawah dan 10% di sisi kiri-kanan */
+    justify-content: space-between; /* Memisahkan logo di ujung kiri dan menu tautan di ujung kanan */
+    align-items: center;            /* Menyejajarkan posisi elemen logo dan menu secara vertikal di tengah */
+    padding: 20px 10%;              /* Jarak dalam: 20px atas-bawah dan 10% di sisi kiri-kanan layar */
     background-color: rgba(13, 13, 19, 0.95); /* Warna latar belakang gelap dengan transparansi 95% */
-    position: fixed;                /* Navigasi menempel di atas saat di-scroll */
-    width: 100%;                    /* Mengatur lebar area navbar agar memenuhi layar (100%) */
-    top: 0;                         /* Menempelkan navbar tepat di batas paling atas layar */
-    z-index: 1000;                  /* Memastikan navbar berada di lapisan paling depan dibanding elemen lain */
+    position: fixed;                /* Navigasi tetap terkunci menempel di atas saat layar di-scroll */
+    width: 100%;                    /* Mengatur lebar area navbar agar memenuhi 100% kapasitas layar */
+    top: 0;                         /* Menempelkan navbar tepat di batas paling atas */
+    z-index: 1000;                  /* Memastikan navbar berada di lapisan terdepan menutupi konten lain */
 }
 
 .logo {
-    font-size: 1.8rem;              /* Mengatur ukuran huruf teks logo sebesar 1.8rem */
+    font-size: 1.8rem;              /* Mengatur ukuran huruf teks logo utama */
     font-weight: 800;               /* Membuat ketebalan huruf teks logo menjadi sangat tebal (Extra Bold) */
-    letter-spacing: 2px;            /* Memberikan jarak antar huruf pada teks logo sebesar 2 piksel */
+    letter-spacing: 2px;            /* Memberikan sekat jarak antar huruf pada teks logo sebesar 2 piksel */
 }
 
 .logo span {
-    color: #9d4edd;                 /* Sentuhan warna ungu pada teks VIBES */
+    color: #9d4edd;                 /* Sentuhan aksen warna ungu ikonik pada teks VIBES */
 }
 
 .nav-links {
-    display: flex;                  /* Mengaktifkan flexbox agar daftar menu berjejer ke samping */
-    list-style: none;               /* Menghilangkan simbol poin (bullet points) pada daftar menu */
+    display: flex;                  /* Mengaktifkan flexbox agar daftar menu berjejer rapi ke samping */
+    list-style: none;               /* Menghilangkan simbol titik/bullet poin bawaan dari tag <ul> <li> */
 }
 
 .nav-links li a {
-    color: white;                   /* Mengatur warna teks menu tautan menjadi putih */
-    text-decoration: none;          /* Menghapus garis bawah bawaan pada menu tautan */
-    margin-left: 20px;              /* Memberikan jarak antar menu link di sisi kiri sebesar 20 piksel */
+    color: white;                   /* Mengatur warna teks tautan menu menjadi putih */
+    text-decoration: none;          /* Menghapus garis bawah bawaan pada elemen tautan */
+    margin-left: 25px;              /* Memberikan jarak antar menu link di sisi kiri sebesar 25 piksel */
     font-weight: 600;               /* Mengatur ketebalan teks menu menjadi semi-bold */
-    transition: color 0.3s;         /* Memberikan efek transisi halus selama 0.3 detik saat warna berubah */
+    transition: color 0.3s ease;    /* Memberikan efek perubahan warna yang halus selama 0.3 detik */
 }
 
 .nav-links li a:hover {
-    color: #ff9e00;                 /* Berubah warna menjadi oranye saat kursor mendekat */
+    color: #ff9e00;                 /* Berubah warna menjadi oranye menyala saat kursor mendekat */
 }
 
-/* HERO SECTION & COUNTDOWN */
+/* =========================================================================
+   3. HERO SECTION & TIMING COUNTDOWN (Tampilan Utama & Timer)
+   ========================================================================= */
 .hero {
-    height: 100vh;                  /* Mengatur tinggi hero section agar memenuhi satu layar penuh */
+    height: 100vh;                  /* Mengatur tinggi hero section agar memenuhi satu layar penuh perangkat */
     background: linear-gradient(rgba(13, 22, 35, 0.7), #0d0d13), url('https://images.unsplash.com/photo-1459749411175-04bf5292ceea?w=1200') no-repeat center center/cover; 
-    /* Memberikan latar belakang gambar estetik dengan lapisan gradasi gelap agar teks terbaca */
-    display: flex;                  /* Mengaktifkan flexbox untuk mengatur posisi konten di dalam hero section */
+    /* Menggabungkan gradasi gelap pelindung keterbacaan teks dan gambar panggung konser dari Unsplash */
+    display: flex;                  /* Mengaktifkan flexbox untuk menyusun konten di dalam hero section */
     justify-content: center;        /* Mengatur posisi konten agar berada di tengah secara horizontal */
     align-items: center;            /* Mengatur posisi konten agar berada di tengah secara vertikal */
-    text-align: center;             /* Mengatur perataan teks konten agar berada di tengah */
-    padding-top: 80px;              /* Memberikan jarak atas agar konten tidak terlalu mepet dengan navbar */
+    text-align: center;             /* Mengatur perataan teks kalimat agar berada tepat di tengah */
+    padding: 80px 20px 0 20px;      /* Memberikan ruang pengaman agar konten tidak tertutup navbar fixed */
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;              /* Mengatur ukuran teks judul utama menjadi sangat besar */
+    font-size: 3.5rem;              /* Mengatur ukuran teks judul konser menjadi sangat besar */
     font-weight: 800;               /* Mengatur ketebalan huruf judul menjadi ekstra tebal */
-    margin-bottom: 10px;            /* Memberikan jarak luar sebesar 10 piksel di bawah judul h1 */
-    line-height: 1.2;               /* Mengatur kerapatan/jarak antar baris kalimat judul h1 */
+    margin-bottom: 10px;            /* Memberikan sekat jarak luar sebesar 10 piksel di bawah judul h1 */
+    line-height: 1.2;               /* Mengatur kerapatan/jarak vertikal antar baris kalimat judul h1 */
 }
 
 .countdown-container {
-    display: flex;                  /* Mengaktifkan flexbox untuk menyejajarkan kotak hitung mundur */
-    justify-content: center;        /* Mengatur posisi seluruh kotak hitung mundur berada di tengah */
+    display: flex;                  /* Mengaktifkan flexbox untuk menyejajarkan blok-blok hitung mundur */
+    justify-content: center;        /* Mengatur posisi seluruh deretan kotak waktu berada di tengah */
     gap: 20px;                      /* Memberikan jarak konstan sebesar 20 piksel antar kotak waktu */
-    margin: 30px 0;                 /* Jarak luar: 30px atas-bawah dan 0 di sisi kiri-kanan */
+    margin: 30px 0;                 /* Jarak luar vertikal: 30px atas-bawah dan 0 di sisi kiri-kanan */
 }
 
 .time-box {
-    background: rgba(157, 78, 221, 0.2); /* Warna latar belakang ungu transparan */
-    border: 2px solid #9d4edd;      /* Memberikan garis tepi berwarna ungu pada kotak waktu */
-    padding: 15px 25px;             /* Memberikan jarak dalam: 15px atas-bawah dan 25px kiri-kanan */
+    background: rgba(157, 78, 221, 0.15); /* Warna latar belakang ungu transparan yang estetik */
+    border: 2px solid #9d4edd;      /* Memberikan garis tepi berwarna ungu solid pada kotak waktu */
+    padding: 15px 25px;             /* Jarak dalam kotak: 15px atas-bawah dan 25px kiri-kanan */
     border-radius: 10px;            /* Membuat sudut-sudut kotak waktu melengkung halus */
-    min-width: 90px;                /* Membatasi lebar minimal kotak waktu sebesar 90 piksel */
-    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4); /* Memberikan efek bias cahaya ungu di sekitar kotak */
+    min-width: 95px;                /* Membatasi lebar minimal kotak agar ukurannya tetap simetris */
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4); /* Memberikan efek bias pendaran cahaya ungu di sekitar kotak */
 }
 
 .time-box span {
-    font-size: 2.5rem;              /* Mengatur ukuran angka di dalam kotak waktu menjadi besar */
+    font-size: 2.5rem;              /* Mengatur ukuran angka penunjuk waktu menjadi besar */
     font-weight: 800;               /* Mengatur ketebalan huruf angka menjadi sangat tebal */
-    display: block;                 /* Mengubah elemen span menjadi block agar teks keterangan di bawahnya otomatis turun */
+    display: block;                 /* Mengubah elemen menjadi block agar teks keterangan teks di bawahnya otomatis turun */
 }
 
 .btn-primary {
-    background-color: #ff9e00;      /* Mengatur warna dasar tombol aksi utama menjadi oranye cerah */
-    color: #0d0d13;                 /* Mengubah warna teks di dalam tombol menjadi hitam gelap kontras */
-    padding: 15px 35px;             /* Memberikan ruang ketukan (padding): 15px atas-bawah dan 35px kiri-kanan */
+    background-color: #ff9e00;      /* Mengatur warna dasar tombol pemicu utama menjadi oranye cerah */
+    color: #0d0d13;                 /* Mengubah warna teks di dalam tombol menjadi hitam gelap agar kontras */
+    padding: 15px 35px;             /* Ruang ketukan tombol: 15px atas-bawah dan 35px kiri-kanan */
     text-decoration: none;          /* Menghapus garis bawah bawaan dari tag tautan tombol */
     font-weight: 800;               /* Mengatur ketebalan huruf tombol menjadi sangat tebal */
-    border-radius: 50px;            /* Membuat bentuk tombol lonjong kapsul sempurna */
-    display: inline-block;          /* Mengubah elemen menjadi inline-block agar margin dan padding berfungsi baik */
-    box-shadow: 0 4px 15px rgba(255, 158, 0, 0.4); /* Memberikan efek bayangan bias oranye tipis di bawah tombol */
-    transition: transform 0.3s, box-shadow 0.3s; /* Mengatur transisi animasi perubahan yang halus selama 0.3 detik */
+    border-radius: 50px;            /* Membuat bentuk tombol lonjong kapsul lingkaran sempurna */
+    display: inline-block;          /* Mengubah elemen menjadi inline-block agar margin dan padding berfungsi optimal */
+    box-shadow: 0 4px 15px rgba(255, 158, 0, 0.4); /* Memberikan efek bayangan bias oranye di bawah tombol */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Mengatur durasi transisi pergerakan tombol */
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);    /* Efek melompat sedikit ke atas saat disorot kursor */
-    box-shadow: 0 6px 20px rgba(255, 158, 0, 0.6); /* Membuat efek bayangan oranye di bawahnya menjadi lebih tajam */
+    transform: translateY(-3px);    /* Efek interaktif melompat naik sedikit ke atas saat disorot kursor */
+    box-shadow: 0 6px 20px rgba(255, 158, 0, 0.6); /* Membuat efek bayangan oranye di bawahnya menjadi lebih tebal */
 }
 
-/* LINEUP (GRID SYSTEM) */
+/* =========================================================================
+   4. LINEUP SECTION (Sistem Grid Album Musik Band Baru)
+   ========================================================================= */
 .lineup, .schedule, .tickets, .location {
     padding: 80px 10%;              /* Mengatur ruang pembatas dalam section: 80px atas-bawah dan 10% kiri-kanan */
 }
@@ -126,154 +135,230 @@ h2 {
 .artist-grid {
     display: grid;                  /* Mengaktifkan tata letak CSS Grid */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-    /* Membuat grid responsif yang otomatis menyesuaikan ukuran layar min 280px per kartu */
-    gap: 30px;                      /* Mengatur jarak celah antar kartu artis sebesar 30 piksel */
+    /* Membuat grid responsif yang otomatis melipat kartu ke bawah jika ukuran layar di bawah 280px */
+    gap: 30px;                      /* Mengatur jarak celah antar kartu band sebesar 30 piksel */
 }
 
 .artist-card {
-    position: relative;             /* Mengatur basis posisi relatif agar elemen info di dalamnya bisa diposisikan absolut */
-    border-radius: 15px;            /* Mengatur tingkat lengkungan sudut kartu sebesar 15 piksel */
-    overflow: hidden;               /* Memotong gambar yang keluar dari area lengkungan border-radius */
-    height: 400px;                  /* Mengunci tinggi kartu profil artis sebesar 400 piksel */
-    border: 1px solid #333;         /* Memberikan garis batas tepi kartu tipis berwarna abu-abu gelap */
+    position: relative;             /* Mengatur basis posisi relatif agar elemen info absolut di dalamnya terikat */
+    border-radius: 15px;            /* Mengatur tingkat lengkungan sudut kartu */
+    overflow: hidden;               /* Memotong gambar yang keluar dari batas lengkungan border-radius */
+    height: 400px;                  /* Mengunci tinggi kartu profil band sebesar 400 piksel */
+    border: 1px solid #2d2d3f;      /* Memberikan garis batas tepi kartu tipis berwarna abu gelap */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);    /* Kartu melayang naik sedikit saat di-hover */
+    border-color: #9d4edd;          /* Border berubah ungu saat disorot */
 }
 
 .artist-card img {
     width: 100%;                    /* Mengatur lebar gambar agar memenuhi kapasitas lebar kartu */
     height: 100%;                   /* Mengatur tinggi gambar agar memenuhi kapasitas tinggi kartu */
-    object-fit: cover;              /* Mengatur agar gambar dipotong secara proporsional sesuai rasio kartu */
-    transition: transform 0.5s;     /* Memberikan efek transisi selama 0.5 detik saat gambar melakukan animasi zoom */
+    object-fit: cover;              /* Gambar dipotong secara proporsional sesuai rasio kartu (tidak merenggang) */
+    transition: transform 0.5s ease; /* Transisi halus efek zoom gambar */
 }
 
 .artist-card:hover img {
-    transform: scale(1.1);          /* Gambar membesar perlahan (zoom 10%) saat di-hover kursor */
+    transform: scale(1.08);          /* Gambar membesar perlahan (zoom 8%) saat di-hover kursor */
 }
 
 .artist-info {
-    position: absolute;             /* Mengunci posisi info teks secara absolut di dalam kartu */
-    bottom: 0;                      /* Menempelkan info teks tepat di bagian dasar bawah kartu */
+    position: absolute;             /* Mengunci posisi informasi teks secara absolut di dalam kartu */
+    bottom: 0;                      /* Menempelkan info teks tepat di bagian paling dasar bawah kartu */
     left: 0;                        /* Menempelkan info teks tepat di batas kiri kartu */
     width: 100%;                    /* Mengatur lebar info teks memenuhi lebar kartu */
-    padding: 20px;                  /* Memberikan ruang dalam teks informasi sebesar 20 piksel */
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9)); /* Gradasi hitam pelindung teks agar mudah dibaca */
+    padding: 25px 20px;             /* Memberikan ruang dalam teks informasi */
+    background: linear-gradient(to top, rgba(13, 13, 19, 1) 10%, rgba(0, 0, 0, 0) 100%); 
+    /* Gradasi hitam pekat dari bawah ke atas sebagai pelindung kontras teks agar mudah dibaca */
+    z-index: 2;
 }
 
-/* SCHEDULE (TABLE) */
+.artist-info h3 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.artist-info p {
+    font-size: 0.85rem;
+    color: #ff9e00;                 /* Warna teks genre band diatur menjadi oranye kontras */
+    font-weight: 600;
+}
+
+/* Badge Special Guest Khusus Band Counterparts */
+.guest-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: #ff9e00;
+    color: #0d0d13;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 20px;
+    z-index: 10;
+    text-transform: uppercase;
+    box-shadow: 0 4px 10px rgba(255, 158, 0, 0.4);
+}
+
+/* =========================================================================
+   5. SCHEDULE SECTION (Tabel Jadwal Penampilan)
+   ========================================================================= */
 .table-container {
-    overflow-x: auto;               /* Agar tabel bisa di-geser ke samping pada layar HP yang sempit */
+    overflow-x: auto;               /* Memunculkan scrollbar horizontal secara otomatis jika tabel meluber di HP */
+    background-color: #161622;
+    border-radius: 15px;
+    border: 1px solid #2d2d3f;
 }
 
 table {
     width: 100%;                    /* Mengatur lebar tabel agar penuh seukuran kontainer pembungkusnya */
-    border-collapse: collapse;      /* Menyatukan garis pembatas sel tabel agar terlihat rapi dan tidak ganda */
-    margin-top: 20px;               /* Memberikan sekat jarak luar sebesar 20 piksel di atas tabel */
+    border-collapse: collapse;      /* Menyatukan garis pembatas sel tabel agar menyatu rapi */
 }
 
 th, td {
     padding: 20px;                  /* Memberikan ketebalan ruang dalam sel tabel sebesar 20 piksel */
     text-align: left;               /* Mengatur teks isi tabel agar rata kiri */
-    border-bottom: 1px solid #333;  /* Memberikan garis pembatas baris tabel tipis berwarna abu-abu gelap */
+    border-bottom: 1px solid #2d2d3f; /* Garis pembatas baris tabel tipis abu-abu */
 }
 
 th {
     background-color: #9d4edd;      /* Mengatur warna latar belakang kepala kolom tabel menjadi ungu */
     color: white;                   /* Mengatur warna teks kepala kolom menjadi putih */
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
 }
 
-tr:hover {
-    background-color: rgba(255, 255, 255, 0.05); /* Sorotan baris tabel (highlight) saat kursor berada di atasnya */
+td {
+    font-size: 0.95rem;
+    color: #ccccdd;
 }
 
-/* TICKETS (FLEXBOX) */
+tr:hover td {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.02); /* Efek sorotan halus baris tabel saat kursor melintas */
+}
+
+/* =========================================================================
+   6. TICKETS CARD SECTION (Flexbox Paket Tiket)
+   ========================================================================= */
 .ticket-container {
     display: flex;                  /* Mengaktifkan sistem layouting Flexbox */
-    justify-content: center;        /* Memposisikan kartu-kartu tiket agar berada di tengah secara horizontal */
-    align-items: center;            /* Menyejajarkan posisi kartu tiket di tengah secara vertikal */
-    gap: 40px;                      /* Mengatur celah pemisah antar kartu tiket sebesar 40 piksel */
-    flex-wrap: wrap;                /* Jika layar perangkat sempit, kartu otomatis turun ke bawah secara fleksibel */
+    justify-content: center;        /* Memposisikan kartu-kartu tiket berada di tengah secara horizontal */
+    align-items: stretch;           /* Memaksa tinggi seluruh kartu tiket seragam seimbang */
+    gap: 30px;                      /* Mengatur celah pemisah antar kartu tiket sebesar 30 piksel */
+    flex-wrap: wrap;                /* Kartu otomatis melipat turun ke bawah secara fleksibel jika ruang menyempit */
 }
 
 .ticket-card {
-    background-color: #161622;      /* Mengatur latar belakang kartu dengan warna abu-abu keunguan gelap */
-    border: 1px solid #ff9e00;      /* Memberikan garis luar pembatas kartu berwarna oranye */
+    background-color: #161622;      /* Mengatur latar belakang kartu dengan warna abu gelap keunguan */
+    border: 1px solid #2d2d3f;      /* Border bawaan abu-abu netral */
     padding: 40px 30px;             /* Jarak dalam kartu: 40px atas-bawah dan 30px kiri-kanan */
-    border-radius: 20px;            /* Mengatur tingkat lengkungan sudut kartu sebesar 20 piksel */
-    width: 320px;                   /* Mengunci dimensi lebar kartu tiket sebesar 320 piksel */
-    text-align: center;             /* Mengatur seluruh perataan teks di dalam kartu agar rata tengah */
-    position: relative;             /* Mengatur posisi relatif agar elemen badge status bisa dikunci posisinya */
+    border-radius: 20px;            /* Mengatur tingkat lengkungan sudut kartu */
+    width: 310px;                   /* Mengunci dimensi lebar baku kartu tiket sebesar 310 piksel */
+    text-align: center;             /* Mengatur seluruh perataan teks di dalam kartu rata tengah */
+    position: relative;             /* Mengatur posisi relatif agar elemen badge status di dalamnya presisi */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Menata tombol beli agar selalu presisi di batas paling bawah kartu */
+    transition: all 0.3s ease;
 }
 
-/* Membedakan kartu VIP agar lebih menonjol */
+/* Membedakan kartu VIP agar terlihat lebih menonjol */
 .ticket-card.VIP {
-    border: 2px solid #ff9e00;      /* Memberikan garis border yang lebih tebal khusus kartu VIP */
-    transform: scale(1.05);         /* Mengatur skala ukuran kartu agar sedikit lebih besar dibanding kartu biasa */
-    box-shadow: 0 0 25px rgba(255, 158, 0, 0.2); /* Memberikan bayangan aura oranye tipis di sekeliling kartu VIP */
+    border: 2px solid #ff9e00;      /* Memberikan garis border oranye yang lebih tebal khusus kartu VIP */
+    transform: scale(1.05);         /* Mengatur skala ukuran kartu agar sedikit lebih besar (menonjol) */
+    box-shadow: 0 0 25px rgba(255, 158, 0, 0.15); /* Memberikan bayangan aura oranye di sekeliling kartu VIP */
+}
+
+.ticket-card:hover {
+    border-color: #9d4edd;          /* Berubah bingkai ungu saat didekati kursor */
 }
 
 .badge {
     position: absolute;             /* Mengunci posisi label penanda secara absolut di atas kartu */
     top: -15px;                     /* Menaruh posisi badge sedikit keluar menembus batas atas kartu */
-    left: 50%;                      /* Memposisikan badge di tengah horizontal */
-    transform: translateX(-50%);    /* Menyeimbangkan titik koordinat agar lurus simetris di tengah kartu */
+    left: 50%;                      /* Memposisikan koordinat badge tepat di tengah horizontal */
+    transform: translateX(-50%);    /* Menyeimbangkan titik tumpu agar lurus simetris di tengah kartu */
     background-color: #ff9e00;      /* Mengubah warna latar belakang badge menjadi oranye */
     color: #0d0d13;                 /* Mengubah warna teks badge menjadi hitam gelap */
-    padding: 5px 15px;              /* Memberikan padding dalam badge: 5px atas-bawah dan 15px kiri-kanan */
-    font-size: 0.8rem;              /* Mengatur ukuran huruf teks badge menjadi kecil */
+    padding: 5px 15px;              /* Padding dalam badge: 5px atas-bawah dan 15px kiri-kanan */
+    font-size: 0.8rem;              /* Mengatur ukuran huruf teks badge menjadi kecil ramping */
     font-weight: 800;               /* Mengatur ketebalan huruf badge menjadi sangat tebal */
-    border-radius: 20px;            /* Melengkungkan sudut kapsul badge sebesar 20 piksel */
+    border-radius: 20px;            /* Melengkungkan sudut kapsul badge */
     text-transform: uppercase;      /* Memaksa teks badge ditulis dengan huruf kapital semua */
 }
 
 .price {
     font-size: 2rem;                /* Mengatur ukuran teks nominal harga menjadi besar */
-    font-weight: 800;               /* Mengatur ketebalan font nominal harga menjadi tebal */
-    margin: 20px 0;                 /* Memberikan sekat jarak luar vertikal sebesar 20 piksel atas dan bawah */
+    font-weight: 800;               /* Mengatur ketebalan font nominal harga */
+    margin: 20px 0;                 /* Memberikan sekat jarak luar vertikal 20 piksel atas dan bawah */
     color: #9d4edd;                 /* Mengubah warna nominal teks harga menjadi ungu */
 }
 
 .ticket-card ul {
     list-style: none;               /* Menghilangkan simbol bulat bawaan list pada detail benefit tiket */
     margin-bottom: 30px;            /* Jarak pisah di bawah daftar benefit sebelum beralih ke tombol */
-    text-align: left;               /* Mengatur teks daftar benefit agar berjejer rapi di sebelah rata kiri */
+    text-align: left;               /* Mengatur teks daftar benefit rata kiri */
 }
 
 .ticket-card ul li {
-    margin-bottom: 10px;            /* Memberikan sekat jarak vertikal antar baris benefit sebesar 10 piksel */
+    margin-bottom: 12px;            /* Memberikan sekat jarak vertikal antar baris benefit */
     font-size: 0.9rem;              /* Ukuran teks detail benefit */
+    color: #ccccdd;
+}
+
+.ticket-card ul li i {
+    color: #25d366;                 /* Memberikan warna hijau pada ikon checklist benefit jika ada */
+    margin-right: 8px;
 }
 
 .btn-buy {
     width: 100%;                    /* Mengatur lebar tombol beli memenuhi kapasitas lebar kartu */
-    padding: 12px;                  /* Memberikan ketebalan ketukan dalam tombol sebesar 12 piksel */
+    padding: 14px;                  /* Mengatur ketebalan ketukan tombol */
     background-color: transparent;  /* Menyetel latar belakang awal tombol menjadi transparan */
     color: white;                   /* Mengatur warna teks tombol menjadi putih */
     border: 2px solid #9d4edd;      /* Memberikan garis bingkai tepi luar berwarna ungu */
     border-radius: 25px;            /* Melengkungkan sudut tombol menjadi melingkar halus */
-    cursor: pointer;                /* Merubah ikon kursor menjadi penanda klik tangan saat diarahkan ke tombol */
-    font-weight: 600;               /* Mengatur ketebalan teks tombol menjadi semi-bold */
-    transition: all 0.3s;           /* Mengatur transisi animasi perubahan visual selama 0.3 detik */
+    cursor: pointer;                /* Merubah ikon kursor menjadi penanda klik tangan */
+    font-weight: 700;               /* Mengatur ketebalan teks tombol menjadi bold */
+    transition: all 0.3s ease;      /* Mengatur transisi animasi perubahan visual */
 }
 
 .btn-buy:hover {
-    background-color: #9d4edd;      /* Tombol penuh warna ungu saat di-hover kursor */
+    background-color: #9d4edd;      /* Tombol penuh warna ungu solid saat di-hover kursor */
+    box-shadow: 0 0 15px rgba(157, 78, 221, 0.4);
 }
 
-/* MAPS & FOOTER */
+/* =========================================================================
+   7. MAPS & FOOTER REGION (Lokasi & Kaki Halaman)
+   ========================================================================= */
 .map-container {
     border-radius: 15px;            /* Melengkungkan sedikit sudut siku bingkai peta iframe */
     overflow: hidden;               /* Memotong elemen peta bagian dalam agar mengikuti bentuk border-radius */
-    border: 2px solid #333;         /* Memberikan bingkai luar pelindung peta berwarna abu-abu gelap */
+    border: 2px solid #2d2d3f;      /* Memberikan bingkai luar pelindung peta berwarna abu-abu gelap */
+    height: 400px;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;                   /* Menghilangkan border bawaan html iframe */
 }
 
 footer {
     text-align: center;             /* Memposisikan seluruh teks di dalam footer berada di tengah */
-    padding: 30px;                  /* Memberikan ketebalan ruang dalam footer sebesar 30 piksel */
+    padding: 40px 20px;             /* Memberikan ketebalan ruang dalam footer */
     background-color: #08080c;      /* Mengatur warna latar belakang khusus area footer menjadi hitam pekat */
     font-size: 0.9rem;              /* Mengatur ukuran teks footer */
     color: #666666;                 /* Mengatur warna teks hak cipta menjadi abu-abu gelap redup */
 }
 
-/* STYLING SOSIAL MEDIA DI FOOTER */
 .footer-container {
     display: flex;                  /* Mengaktifkan flexbox kontainer footer */
     flex-direction: column;         /* Menyusun ikon di atas dan teks copyright di bawah secara vertikal */
@@ -299,51 +384,95 @@ h4 {
     display: inline-block;          /* Mengubah tautan menjadi elemen inline-block agar efek melayang berfungsi baik */
 }
 
-/* EFEK HOVER: Memberikan warna khas masing-masing medsos saat kursor mendekat */
-.social-icons a.icon-discord:hover {
-    color: #7289da;                 /* Warna khas Discord Biru */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(114, 137, 218, 0.6); /* Efek glow neon sesuai warna identitas ikon */
-}
+/* --- EFEK HOVER ICON MEDIA SOSIAL NYATA --- */
+.social-icons a.icon-discord:hover   { color: #7289da; transform: translateY(-5px); text-shadow: 0 0 15px rgba(114, 137, 218, 0.6); }
+.social-icons a.icon-whatsapp:hover  { color: #25d366; transform: translateY(-5px); text-shadow: 0 0 15px rgba(37, 211, 102, 0.6); }
+.social-icons a.icon-yt:hover        { color: #ff0000; transform: translateY(-5px); text-shadow: 0 0 15px rgba(255, 0, 0, 0.6); }
+.social-icons a.icon-tiktok:hover    { color: #ffffff; transform: translateY(-5px); text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+.social-icons a.icon-threads:hover   { color: #ffffff; transform: translateY(-5px); text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
+.social-icons a.icon-ig:hover        { color: #e1306c; transform: translateY(-5px); text-shadow: 0 0 15px rgba(225, 48, 108, 0.6); }
+.social-icons a.icon-fb:hover        { color: #1877f2; transform: translateY(-5px); text-shadow: 0 0 15px rgba(24, 119, 242, 0.6); }
+.social-icons a.icon-x:hover         { color: #ffffff; transform: translateY(-5px); text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); }
 
-.social-icons a.icon-whatsapp:hover {
-    color: #25d366;                 /* Warna khas WhatsApp Hijau */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(37, 211, 102, 0.6);  /* Efek glow neon sesuai warna identitas ikon */
-}
 
-.social-icons a.icon-yt:hover {
-    color: #ff0000;                 /* Warna khas YouTube Merah */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(255, 0, 0, 0.6);     /* Efek glow neon sesuai warna identitas ikon */
-}
+/* =========================================================================
+   8. RESPONSIVE DESIGN FOR MOBILE PHONE (Optimalisasi Layar HP - MAKS 768px)
+   ========================================================================= */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Mengunci body agar tidak bisa bergeser ke kanan akibat elemen bocor */
+    html, body {
+        width: 100%;
+        overflow-x: hidden;
+    }
 
-.social-icons a.icon-tiktok:hover {
-    color: #ffffff;                 /* Warna khas TikTok Putih Bersih */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Efek glow neon sesuai warna identitas ikon */
-}
+    /* 2. Merampingkan padding seksi halaman */
+    .lineup, .schedule, .tickets, .location {
+        padding: 40px 5%;
+    }
 
-.social-icons a.icon-threads:hover {
-    color: #ffffff;                 /* Warna khas Threads Putih Bersih */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Efek glow neon sesuai warna identitas ikon */
-}
+    /* 3. Menghilangkan menu navigasi bawaan di HP agar tidak merusak lebar header */
+    .nav-links {
+        display: none; 
+    }
+    .navbar {
+        padding: 15px 5%;
+    }
+    .logo {
+        font-size: 1.3rem;
+    }
 
-.social-icons a.icon-ig:hover {
-    color: #e1306c;                 /* Warna khas Instagram pink/magenta */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(225, 48, 108, 0.6);  /* Efek glow neon sesuai warna identitas ikon */
-}
+    /* 4. MENYEMBUHKAN HERO SECTION (Sesuai Foto Google Chrome HP Kamu) */
+    .hero {
+        padding: 100px 15px 40px 15px;
+        height: auto; /* Melepas tinggi 100vh agar konten tidak terpotong bawah */
+    }
 
-.social-icons a.icon-fb:hover {
-    color: #1877f2;                 /* Warna khas Facebook Biru */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(24, 119, 242, 0.6);  /* Efek glow neon sesuai warna identitas ikon */
-}
+    .hero-content h1 {
+        font-size: 2.0rem; /* Memperkecil judul agar pas masuk di layar HP */
+        line-height: 1.3;
+    }
 
-.social-icons a.icon-x:hover {
-    color: #ffffff;                 /* Warna khas X (Twitter baru) Putih/Minimalis */
-    transform: translateY(-5px);    /* Efek visual melayang terangkat ke atas sejauh 5 piksel */
-    text-shadow: 0 0 15px rgba(255, 255, 255, 0.6); /* Efek glow neon sesuai warna identitas ikon */
+    /* 5. MENYEMBUHKAN KOTAK COUNTDOWN AGAR TIDAK MELUBER KELUAR */
+    .countdown-container {
+        gap: 8px;          /* Mempersempit jarak antar kotak */
+        margin: 20px 0;
+        flex-wrap: nowrap; /* Memaksa tetap satu baris tapi mengecil secara fleksibel */
+    }
+
+    .time-box {
+        padding: 10px 5px; /* Mengurangi padding dalam kotak secara drastis */
+        min-width: 70px;   /* Mengecilkan lebar minimal kotak dari 90px menjadi 70px */
+        box-shadow: 0 0 10px rgba(157, 78, 221, 0.3);
+    }
+
+    .time-box span {
+        font-size: 1.6rem; /* Mengecilkan ukuran angka penunjuk waktu */
+    }
+    
+    .time-box p {
+        font-size: 0.75rem; /* Mengecilkan teks "Hari", "Jam", "Menit", "Detik" */
+    }
+
+    .btn-primary {
+        padding: 12px 28px;
+        font-size: 0.9rem;
+    }
+
+    /* 6. Memaksa Grid Kartu Band Menjadi 1 Kolom ke Bawah */
+    .artist-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .artist-card {
+        height: 320px;
+    }
+
+    /* 7. Memaksa Tiket Lebar Penuh */
+    .ticket-card {
+        width: 100%;
+    }
+    .ticket-card.VIP {
+        transform: scale(1); /* Mematikan scale pembesaran di HP agar tidak menabrak sisi screen */
+    }
 }
